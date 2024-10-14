@@ -3,11 +3,12 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { MenuItem } from 'primeng/api';
 import { MenusComponent } from "../Menus/menus/menus.component";
+import { AddComponent } from "../Menus/add/add.component";
 
 @Component({
   selector: 'app-menu-dash',
   standalone: true,
-  imports: [SharedModule, CommonModule, MenusComponent],
+  imports: [SharedModule, CommonModule, MenusComponent, AddComponent],
   templateUrl: './menu-dash.component.html',
   styleUrl: './menu-dash.component.css'
 })
@@ -39,5 +40,7 @@ export class MenuDashComponent implements OnInit {
   onActiveItemChange(event: MenuItem) {
     this.activeItem = event;
   }
+
+
 
 }

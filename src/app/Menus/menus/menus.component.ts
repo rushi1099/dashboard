@@ -1,18 +1,58 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { DialogService,DynamicDialogRef } from 'primeng/dynamicdialog';
+import { AddComponent } from '../add/add.component';
 
 @Component({
   selector: 'app-menus',
   standalone: true,
   imports: [SharedModule, CommonModule],
+  providers:[DialogService],
   templateUrl: './menus.component.html',
   styleUrl: './menus.component.css'
 })
 export class MenusComponent implements OnInit{
 
+  isModalVisible: boolean = false;
+constructor(public dialogService: DialogService){
+
+}
   ngOnInit(): void {
   }
+
+  toggleModal() {
+    this.isModalVisible = !this.isModalVisible;
+  }
+
+  ref: DynamicDialogRef | undefined;
+
+  // show() {
+  //     this.ref = this.dialogService.open(AddComponent, {
+  //         header: 'Add Details',
+  //         width: '50vw',
+  //         contentStyle: { overflow: 'auto' },
+  //         breakpoints: {
+  //             '960px': '75vw',
+  //             '640px': '90vw'
+  //         },
+  //     });
+
+  //     this.ref.onClose.subscribe((data: any) => {
+  //     //     let summary_and_detail;
+  //     //     if (data) {
+  //     //         const buttonType = data?.buttonType;
+  //     //         summary_and_detail = buttonType ? { summary: 'No Product Selected', detail: `Pressed '${buttonType}' button` } : { summary: 'Product Selected', detail: data?.name };
+  //     //     } else {
+  //     //         summary_and_detail = { summary: 'No Product Selected', detail: 'Pressed Close button' };
+  //     //     }
+  //     //     this.messageService.add({ severity: 'info', ...summary_and_detail, life: 3000 });
+  //     // });
+
+  //     // this.ref.onMaximize.subscribe((value) => {
+  //     //     this.messageService.add({ severity: 'info', summary: 'Maximized', detail: `maximized: ${value.maximized}` });
+  //     });
+  // }
 
   customers = [
     {

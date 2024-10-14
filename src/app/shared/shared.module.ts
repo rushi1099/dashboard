@@ -8,6 +8,8 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [],
@@ -23,7 +25,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     TabMenuModule,
     TableModule,
     TabViewModule,
-    FloatLabelModule
+    FloatLabelModule,
+    DynamicDialogModule
   ]
 })
 export class SharedModule {
